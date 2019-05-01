@@ -1,4 +1,6 @@
-@import 'fonts.less';
+@import "fonts.less";
+@import "color.less";
+@import "flex.less";
 a,
 button {
   pointer-events: all;
@@ -25,12 +27,12 @@ p {
 }
 
 i {
-  color: grey;
+  color: @greycolor;
   font-size: @mediumFontSize;
 }
 
 i:hover {
-  color: aquamarine;
+  color: @aquamarine;
 }
 
 small {
@@ -38,74 +40,65 @@ small {
 }
 
 .body-container {
-  display: flex;
-  flex-direction: row;
+  .flex-mixin(row);
   height: 100%;
 }
 
-
-
-
-
-
 /* form section */
 .contact-section {
-    padding-left: 20%;
-    padding-top: 10%;
-    padding-right: 20%;
-    width: 100%;
-}
+  padding-left: 20%;
+  padding-top: 10%;
+  padding-right: 20%;
+  width: 100%;
 
-.contact-section h1 {
+  h1 {
     font-size: @largeFontSize;
-    color: white;
-}
+    color: @whiteColor;
+  }
 
-.form-section {
-    display: flex;
-    flex-direction: column;
+  .form-section {
+    .flex-mixin(column);
     width: 100%;
-}
 
-/* form box styling */
-.form-section .box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    background: transparent;
-    color: white;
-}
+    /* form box styling */
+    .box {
+      flex: 1;
+      .flex-mixin(column);
+      margin-top: 20px;
+      background: transparent;
+      color: @whiteColor;
 
-/* form inputs */
-.form-section .box input{
-    width: 80%;
-    height: 30px;
-    border: 1px solid white;
-    background: transparent;
-    color: white;
-}
+      /* form inputs */
+      input {
+        width: 80%;
+        height: 30px;
+        border: 1px solid white;
+        background: transparent;
+        color: @whiteColor;
+      }
 
-.form-section .box label{
-    padding-bottom: 10px;
-}
+      label {
+        padding-bottom: 10px;
+      }
 
-/* form text area */
-.form-section .box textarea{
-    margin-bottom: 20px;
-    border: 1px solid white;
-    background: transparent;
-    color: white;
-    width: 100%;
-}
-/* end form box styling */
-
-/* Form submit button */
-.form-section .submit {
-    border: 1px solid white;
+      /* form text area */
+      textarea {
+        margin-bottom: 20px;
+        border: 1px solid @whiteColor;
+        background: transparent;
+        color: @whiteColor;
+        width: 100%;
+      }
+    }
+    /* end form box styling */
+  }
+  /* Form submit button */
+  .submit {
+    border: 1px solid @whiteColor;
     padding: 10px;
     width: 100px;
-    color: white;
+    color: @whiteColor;
     background: transparent;
+  }
 }
 /* End form action */
