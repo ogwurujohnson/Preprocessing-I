@@ -1,3 +1,4 @@
+@import 'fonts.less';
 a,
 button {
   pointer-events: all;
@@ -14,7 +15,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-size: 1.8rem;
+  font-size: @smallFontSize + .2;
   margin-bottom: 15px;
   font-family: "Rubik", sans-serif;
 }
@@ -25,7 +26,7 @@ p {
 
 i {
   color: grey;
-  font-size: 2.2rem;
+  font-size: @mediumFontSize;
 }
 
 i:hover {
@@ -33,7 +34,7 @@ i:hover {
 }
 
 small {
-  font-size: 1.2rem;
+  font-size: @xsmallFontSize;
 }
 
 .body-container {
@@ -50,7 +51,7 @@ small {
 }
 
 .work-section .title {
-  font-size: 3.2rem;
+  font-size: @largeFontSize;
   color: white;
   margin: 100px auto;
 }

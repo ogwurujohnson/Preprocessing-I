@@ -1,3 +1,4 @@
+@import 'fonts.less';
 a,
 button {
   pointer-events: all;
@@ -14,7 +15,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-size: 1.8rem;
+  font-size: @smallFontSize;
   margin-bottom: 15px;
   font-family: "Rubik", sans-serif;
 }
@@ -25,7 +26,7 @@ p {
 
 i {
   color: grey;
-  font-size: 22px;
+  font-size: @mediumFontSize;
 }
 
 i:hover {
@@ -33,7 +34,7 @@ i:hover {
 }
 
 small {
-  font-size: 1.2rem;
+  font-size: @xsmallFontSize;
 }
 
 .body-container {
@@ -56,10 +57,10 @@ small {
 	line-height: 1.5;
   }
   .developer-section .introduction h1 span {
-	font-size: 6.4rem;
+	font-size: @xlargeFontSize;
   }
   .container .developer-section .introduction h1 {
-	font-size: 3.2rem;
+	font-size: @largeFontSize;
 	word-spacing: 10px;
 	letter-spacing: 10px;
   }
@@ -84,7 +85,7 @@ small {
 	flex: 2;
 	display: flex;
 	flex-direction: row;
-	font-size: 12px;
+	font-size: @xsmallFontSize;
 	line-height: 1.5;
 	word-spacing: 0%;
 	letter-spacing: 0%;
