@@ -1,7 +1,6 @@
 @import "fonts.less";
-@whiteColor: white;
-@aquamarine: aquamarine;
-@bluecolor: #6295fb;
+@import "color.less";
+@import "flex.less";
 a,
 button {
   pointer-events: all;
@@ -40,19 +39,17 @@ small {
   font-size: @xsmallFontSize;
 }
 
-// create a flex mixin for flex box
-.flex-mixin(@orientation) {
-	display: flex;
-	flex-direction: @orientation;
-}
+
 
 .body-container {
+	// use mixin imported
   .flex-mixin(row);
   height: 100%;
 }
 
 // main container section
 .container {
+	// use mixin imported
   .flex-mixin(row);
   justify-content: space-between;
   width: 100%;
@@ -98,6 +95,7 @@ small {
 	margin-left: 15%;
 	padding-right: 32px;
 	flex: 2;
+	// use mixin imported
 	.flex-mixin(row);
 	font-size: @xsmallFontSize;
 	line-height: 1.5;
