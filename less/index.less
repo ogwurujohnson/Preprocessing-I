@@ -1,4 +1,7 @@
-@import 'fonts.less';
+@import "fonts.less";
+@whiteColor: white;
+@aquamarine: aquamarine;
+@bluecolor: #6295fb;
 a,
 button {
   pointer-events: all;
@@ -30,87 +33,98 @@ i {
 }
 
 i:hover {
-  color: aquamarine;
+  color: @aquamarine;
 }
 
 small {
   font-size: @xsmallFontSize;
 }
 
+// create a flex mixin for flex box
+.flex-mixin(@orientation) {
+	display: flex;
+	flex-direction: @orientation;
+}
+
 .body-container {
-  display: flex;
-  flex-direction: row;
+  .flex-mixin(row);
   height: 100%;
 }
 
+// main container section
 .container {
-  display: flex;
+  .flex-mixin(row);
   justify-content: space-between;
   width: 100%;
   align-items: center;
-}
 
-.container .developer-section {
-	color: white;
-	flex: 2;
-	padding-left: 10%;
-	line-height: 1.5;
+//   nest developer section to container
+  .developer-section {
+    color: @whiteColor;
+    flex: 2;
+    padding-left: 10%;
+    line-height: 1.5;
+
+	// nest introduction to developer section
+    .introduction h1 {
+      font-size: @largeFontSize;
+      word-spacing: 10px;
+      letter-spacing: 10px;
+
+      span {
+        font-size: @xlargeFontSize;
+      }
+
+      p {
+        word-spacing: 3px;
+        letter-spacing: 3px;
+      }
+    }
+
+	// next contact me button to developer section
+    .contact-me {
+      border: 1px solid @whiteColor;
+      color: @whiteColor;
+      padding: 10px;
+      margin-top: 40px;
+      background: transparent;
+      width: 50%;
+    }
   }
-  .developer-section .introduction h1 span {
-	font-size: @xlargeFontSize;
-  }
-  .container .developer-section .introduction h1 {
-	font-size: @largeFontSize;
-	word-spacing: 10px;
-	letter-spacing: 10px;
-  }
-  .container .developer-section .introduction p {
-	word-spacing: 3px;
-	letter-spacing: 3px;
-  }
-  
-  .container .developer-section .contact-me {
-	border: 1px solid white;
-	color: white;
-	padding: 10px;
-	margin-top: 40px;
-	background: transparent;
-	width: 50%;
-  }
-  
-  .container .packagejson-section {
-	color: white;
+
+//   nest packajejson section to container
+  .packagejson-section {
+	color: @whiteColor;
 	margin-left: 15%;
 	padding-right: 32px;
 	flex: 2;
-	display: flex;
-	flex-direction: row;
+	.flex-mixin(row);
 	font-size: @xsmallFontSize;
 	line-height: 1.5;
 	word-spacing: 0%;
 	letter-spacing: 0%;
+
+	.parent {
+		color: @aquamarine;
+		padding-left: 20px;
+	  }
+	// Declare a mixin   
+	  .children(@padding, @color) {
+		color: @color;
+		padding: @padding;
+	  }
+	  .closing-braces {
+		// use mixin
+		.children(20px, @whiteColor);
+	  }
+	  .parent-children {
+		//   use mixin
+		.children(30px, @aquamarine);
+	  }
+	  .children {
+		//   use mixin
+		.children(30px, @bluecolor);
+	  }
   }
-  
-  .container .packagejson-section .parent {
-	  color: aquamarine;
-	  padding-left: 20px;
-  }
-  .container .packagejson-section .closing-braces {
-	  color: white;
-	  padding: 20px;
-  }
-  
-  .container .packagejson-section .parent-children {
-	  color: aquamarine;
-	  padding: 30px;
-  }
-  
-  .container .packagejson-section .children {
-	  color: #6295fb;
-	  padding: 30px;
-  }
-  
-  .container .packagejson-section .parent-children .colon{
-	  padding: 0;
-  }
-  
+}
+
