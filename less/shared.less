@@ -1,5 +1,7 @@
 
-@import 'fonts.less';
+@import "fonts.less";
+@import "color.less";
+@import "flex.less";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -168,42 +170,46 @@ table {
 .main-header {
   height: 100%;
   width: 4%;
-  display: flex;
-  flex-direction: column;
+// use flex-mixin imported
+  .flex-mixin(column);
   border-right: 1px solid #343b42;
   justify-content: space-between;
   padding-left: 16px;
   background-color: #343b42;
   align-items: baseline;
+
+  .site-logo {
+    padding-right: 40%;
+    padding-bottom: 30%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .translator p {
+    font-size: @smallFontSize;
+    color: @whiteColor;
+  }
+
+  .navigation-items {
+    flex: 5;
+    // use flex-mixin imported
+    .flex-mixin(column);
+    justify-content: space-evenly;
+  }
+
+  .social-links {
+    flex: 2;
+    // use flex-mixin imported
+    .flex-mixin(column);
+    justify-content: space-evenly;
+  }
+  /* End Main Header Styling */
 }
 
-.main-header .site-logo {
-  padding-right: 40%;
-  padding-bottom: 30%;
-}
-.main-header .site-logo img {
-  width: 100%;
-}
 
-.main-header .translator p {
-  font-size: @smallFontSize;
-  color: white;
-}
 
-.main-header .navigation-items {
-  flex: 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.main-header .social-links {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-/* End Main Header Styling */
 
 /* Secondary Header */
 .secondary-header {
