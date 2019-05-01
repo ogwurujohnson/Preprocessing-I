@@ -47,6 +47,11 @@ small {
 	// use mixin imported
   .flex-mixin(row);
   height: 100%;
+  width: 100%;
+
+  @media(max-width: 500px) {
+	.flex-mixin(column);
+  }
 }
 
 // main container section
@@ -57,18 +62,32 @@ small {
   width: 100%;
   align-items: center;
 
+  @media(max-width: 500px) {
+	  .flex-mixin(column);
+  }
 //   nest developer section to container
   .developer-section {
     color: @whiteColor;
     flex: 2;
     padding-left: 10%;
-    line-height: 1.5;
+	line-height: 1.5;
+	
+	@media(max-width: 500px) {
+		margin-top: 20%;
+		width: 100%;
+		padding-left: 5%;
+		margin-bottom: 70%;
+	}
 
 	// nest introduction to developer section
     .introduction h1 {
       font-size: @largeFontSize;
       word-spacing: 10px;
-      letter-spacing: 10px;
+	  letter-spacing: 10px;
+	  
+	  @media(max-width: 500px) {
+		  font-size: @smallFontSize;
+	  }
 
       span {
         font-size: @xlargeFontSize;
@@ -87,7 +106,11 @@ small {
       padding: 10px;
       margin-top: 40px;
       background: transparent;
-      width: 50%;
+	  width: 50%;
+	  
+	  @media(max-width: 500px) {
+		  margin-top: 20%;
+	  }
     }
   }
 
@@ -103,6 +126,10 @@ small {
 	line-height: 1.5;
 	word-spacing: 0%;
 	letter-spacing: 0%;
+
+	@media(max-width: 500px) {
+		display: none;
+	}
 
 	.parent {
 		color: @aquamarine;
