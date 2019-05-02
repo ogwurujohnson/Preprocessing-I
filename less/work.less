@@ -1,0 +1,80 @@
+@import "fonts.less";
+@import "color.less";
+@import "flex.less";
+a,
+button {
+  pointer-events: all;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: @smallFontSize + 0.2;
+  margin-bottom: 15px;
+  font-family: "Rubik", sans-serif;
+}
+
+p {
+  line-height: 1.4;
+}
+
+i {
+  color: @greycolor;
+  font-size: @mediumFontSize;
+}
+
+i:hover {
+  color: @aquamarine;
+}
+
+small {
+  font-size: @xsmallFontSize;
+}
+
+.body-container {
+  .flex-mixin(row);
+  height: 100%;
+}
+
+// nest the work section with its children
+.work-section {
+  .flex-mixin(column);
+  width: 80%;
+  margin: 0 auto;
+
+//   nest the title section to the work section
+  .title {
+    font-size: @largeFontSize;
+    color: @whiteColor;
+    margin: 100px auto;
+  }
+
+  //   nest the work gallery section to the work section
+  .work-gallery {
+    .flex-mixin(row);
+    flex-wrap: wrap;
+
+    // nest work section ton the work gallery section
+    .work {
+      width: 270px;
+      padding: 10px;
+      padding-left: 0px;
+      padding-top: 0px;
+      margin: 10px auto;
+
+      img {
+        width: 265px;
+      }
+    }
+  }
+}
+
+

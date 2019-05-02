@@ -1,0 +1,104 @@
+@import "fonts.less";
+@import "color.less";
+@import "flex.less";
+a,
+button {
+  pointer-events: all;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: @smallFontSize;
+  margin-bottom: 15px;
+  font-family: "Rubik", sans-serif;
+}
+
+p {
+  line-height: 1.4;
+}
+
+i {
+  color: @greycolor;
+  font-size: @mediumFontSize;
+}
+
+i:hover {
+  color: @aquamarine;
+}
+
+small {
+  font-size: @xsmallFontSize;
+}
+
+.body-container {
+  .flex-mixin(row);
+  height: 100%;
+}
+
+/* form section */
+.contact-section {
+  padding-left: 20%;
+  padding-top: 10%;
+  padding-right: 20%;
+  width: 100%;
+
+  h1 {
+    font-size: @largeFontSize;
+    color: @whiteColor;
+  }
+
+  .form-section {
+    .flex-mixin(column);
+    width: 100%;
+
+    /* form box styling */
+    .box {
+      flex: 1;
+      .flex-mixin(column);
+      margin-top: 20px;
+      background: transparent;
+      color: @whiteColor;
+
+      /* form inputs */
+      input {
+        width: 80%;
+        height: 30px;
+        border: 1px solid white;
+        background: transparent;
+        color: @whiteColor;
+      }
+
+      label {
+        padding-bottom: 10px;
+      }
+
+      /* form text area */
+      textarea {
+        margin-bottom: 20px;
+        border: 1px solid @whiteColor;
+        background: transparent;
+        color: @whiteColor;
+        width: 100%;
+      }
+    }
+    /* end form box styling */
+  }
+  /* Form submit button */
+  .submit {
+    border: 1px solid @whiteColor;
+    padding: 10px;
+    width: 100px;
+    color: @whiteColor;
+    background: transparent;
+  }
+}
+/* End form action */

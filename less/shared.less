@@ -1,0 +1,252 @@
+
+@import "fonts.less";
+@import "color.less";
+@import "flex.less";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+
+
+:root {
+  font-size: @defaultFontSize;
+  @media(max-width: 500px) {
+    background-color: black;
+  }
+}
+
+.particle,
+.particle > canvas,
+#particles-js {
+  z-index: -1 !important;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(8, 6, 17); /* this was my color */
+  left: 0px;
+  top: 0px;
+
+  @media(max-width: 500px) {
+    display: none;
+  }
+}
+
+#content {
+  pointer-events: all;
+}
+
+.header {
+  flex: 1;
+}
+
+/* Main Header Styling */
+.main-header {
+  width: 4%;
+// use flex-mixin imported
+  .flex-mixin(column);
+  border-right: 1px solid #343b42;
+  justify-content: space-between;
+  padding-left: 16px;
+  background-color: #343b42;
+  align-items: baseline;
+
+  @media (max-width: 500px){
+    .flex-mixin(row);
+    background-color: transparent;
+  }
+
+  .site-logo {
+    padding-right: 40%;
+    padding-bottom: 30%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .translator p {
+    font-size: @smallFontSize;
+    color: @whiteColor;
+
+    @media(max-width: 500px) {
+      display: none;
+    }
+  }
+
+  .navigation-items {
+    flex: 5;
+    // use flex-mixin imported
+    .flex-mixin(column);
+    justify-content: space-evenly;
+    @media(max-width: 500px) {
+      display: none;
+    }
+  }
+
+  .social-links {
+    flex: 2;
+    // use flex-mixin imported
+    .flex-mixin(column);
+    justify-content: space-evenly;
+    @media(max-width: 500px) {
+      .flex-mixin(row);
+      justify-content: space-around;
+      height: 100%;
+    }
+  }
+  /* End Main Header Styling */
+}
+
+
+
+
+/* Secondary Header */
+.secondary-header {
+  display: none;
+  @media(max-width: 500px) {
+    .flex-mixin(row);
+    align-items: flex-end;
+   
+  }
+
+  a {
+    @media(max-width: 500px) {
+      padding-right: 12%;
+    }
+  }
+}
+/* End Secondary */
